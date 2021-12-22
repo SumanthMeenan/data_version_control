@@ -10,7 +10,7 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          pip install -r requirements.txt
+          sudo chown -R $USERNAME /Users/$USERNAME/Library/Caches/pip install -r requirements.txt
           dvc repro 
 
           git fetch --prune
